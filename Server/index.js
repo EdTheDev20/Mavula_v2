@@ -10,8 +10,14 @@ const cors = require("cors");
     filename: function(req,file,cb){
       nome = file.originalname; 
       cb(null,nome)} }); */
+      const app = express();
 
-const app = express();
+
+
+      app.get("/",(req,res)=>{
+console.log("Accessed");
+res.send({Mensagem:"Welcome back"})
+})
 app.use(cors());
 app.listen(PORT, () => {
 console.log(`Server started on PORT ${PORT}`);
